@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="203.0" prefWidth="350.0" stylesheets="@material-fx-v0_3.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameCovid.ModeSelector">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="354.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="355.0" style="-fx-text-fill: white;" text="Scegli Modalità" />
+            <Button fx:id="buttonSimulazione" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionSimulazione" prefHeight="65.0" prefWidth="357.0" text="Simulazione" />
+            <Button fx:id="buttonCovidGame" mnemonicParsing="false" onAction="#actionCovidGame" prefHeight="65.0" prefWidth="356.0" text="CovidGame" />
+         </children></VBox>
+   </children>
+</AnchorPane>

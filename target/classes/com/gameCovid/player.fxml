@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="377.0" prefWidth="672.0" stylesheets="@material-fx-v0_3.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameCovid.SecondaryController">
+   <children>
+      <ProgressBar fx:id="barNervoso" layoutX="156.0" layoutY="63.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <ProgressBar fx:id="barCircolatorio" layoutX="156.0" layoutY="101.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <ProgressBar fx:id="barRespiratorio" layoutX="156.0" layoutY="141.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <ProgressBar fx:id="barScheletrico" layoutX="156.0" layoutY="181.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <ProgressBar fx:id="barImmunitario" layoutX="156.0" layoutY="220.0" prefWidth="200.0" progress="0.0" style="-fx-accent: red; -fx-border-width: 1; -fx-border-color: white;" visible="false" />
+      <ProgressBar fx:id="barAveregeLife" layoutX="154.0" layoutY="332.0" prefHeight="21.0" prefWidth="459.0" progress="0.0" visible="false" />
+      <Label fx:id="labelNervoso" alignment="CENTER" layoutX="21.0" layoutY="65.0" prefHeight="20.0" prefWidth="115.0" style="-fx-text-fill: white;" text="Sistema Nervoso" visible="false" />
+      <Label fx:id="labelCircolatorio" alignment="CENTER" layoutX="15.0" layoutY="102.0" prefHeight="20.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Sistema Circolatorio" visible="false" />
+      <Label fx:id="labelRespiratorio" alignment="CENTER" layoutX="8.0" layoutY="142.0" prefHeight="20.0" prefWidth="139.0" style="-fx-text-fill: white;" text="Sistema Respiratorio" visible="false" />
+      <Label fx:id="labellScheletrico" alignment="CENTER" layoutX="15.0" layoutY="182.0" prefHeight="20.0" prefWidth="125.0" style="-fx-text-fill: white;" text="Sistema Scheletrico" visible="false" />
+      <Label fx:id="labelImmunitario" alignment="CENTER" layoutX="14.0" layoutY="222.0" prefHeight="20.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Sistema Immunitario" visible="false" />
+      <Button fx:id="buttonNextRound" layoutX="192.0" layoutY="268.0" mnemonicParsing="false" onAction="#actionNextRound" style="-fx-text-fill: red;" text="Prossimo Round" visible="false" />
+      <Button fx:id="buttonAnalgesici" disable="true" layoutX="409.0" layoutY="82.0" mnemonicParsing="false" onAction="#actionAnalgesici" style="-fx-text-fill: pink;" text="Analgesici" visible="false" />
+      <Button fx:id="buttonImmunostimolanti" disable="true" layoutX="383.0" layoutY="202.0" mnemonicParsing="false" onAction="#actionImmunostimolanti" prefHeight="40.0" prefWidth="139.0" style="-fx-text-fill: #ffbb00;" text="Immunostimolanti" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button fx:id="buttonCorticosteroidi" disable="true" layoutX="525.0" layoutY="142.0" mnemonicParsing="false" onAction="#actionCorticosteroidi" style="-fx-text-fill: #ffbb00;" text="Corticosteroidi" visible="false" />
+      <Button fx:id="buttonVaccino" disable="true" layoutX="540.0" layoutY="203.0" mnemonicParsing="false" onAction="#actionVaccino" prefHeight="40.0" prefWidth="87.0" style="-fx-text-fill: green;" text="Vaccino" visible="false" />
+      <Button fx:id="buttonOssigeno" disable="true" layoutX="409.0" layoutY="142.0" mnemonicParsing="false" onAction="#actionOssigeno" prefHeight="40.0" prefWidth="87.0" text="Ossigeno" visible="false" />
+      <Button fx:id="buttonTAC" disable="true" layoutX="540.0" layoutY="81.0" mnemonicParsing="false" onAction="#actionTAC" prefHeight="40.0" prefWidth="87.0" text="TAC" visible="false" />
+      <Label fx:id="labelRisorse" layoutX="458.0" layoutY="42.0" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: white;" text="Punti risorse:" visible="false" />
+      <Label fx:id="labelLifeState" layoutX="449.0" layoutY="278.0" style="-fx-text-fill: white;" text="Puoi ancora vincere!" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="labelName" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="32.0" prefHeight="20.0" prefWidth="100.0" style="-fx-text-fill: red;" text="Inserisci il nick" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Vivaldi Italic" size="12.0" />
+         </font></Label>
+      <Label fx:id="labelPoint" layoutX="561.0" layoutY="42.0" prefHeight="20.0" prefWidth="28.0" style="-fx-text-fill: white;" text="0" visible="false" />
+      <Button fx:id="buttonGameInserisci" layoutX="111.0" layoutY="258.0" mnemonicParsing="false" onAction="#actionInserisci" prefHeight="40.0" prefWidth="90.0" style="-fx-text-fill: red;" text="Inserisci" />
+      <TextField fx:id="fieldName" layoutX="71.0" layoutY="144.0" />
+      <Label fx:id="labelGuide" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="342.0" layoutY="67.0" prefHeight="258.0" prefWidth="308.0" text="Label---------------------------------------------------------------------" wrapText="true" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,7 @@
+com\gameCovid\Simulazione.class
+module-info.class
+com\gameCovid\ModeSelector.class
+com\gameCovid\SecondaryController.class
+com\gameCovid\App.class
+com\gameCovid\PrimaryController.class
+com\gameCovid\Player.class
