@@ -2,14 +2,36 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="203.0" prefWidth="350.0" stylesheets="@material-fx-v0_3.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameCovid.ModeSelector">
    <children>
-      <VBox prefHeight="200.0" prefWidth="354.0">
+      <Pane prefHeight="239.0" prefWidth="354.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="355.0" style="-fx-text-fill: white;" text="Scegli Modalità" />
-            <Button fx:id="buttonSimulazione" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionSimulazione" prefHeight="65.0" prefWidth="357.0" text="Simulazione" />
-            <Button fx:id="buttonCovidGame" mnemonicParsing="false" onAction="#actionCovidGame" prefHeight="65.0" prefWidth="356.0" text="CovidGame" />
-         </children></VBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="355.0" style="-fx-text-fill: orange;" text="Scegli Modalità">
+               <font>
+                  <Font name="Comic Sans MS" size="28.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.9666666666666667" startY="0.4380952380952381">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.33495786786079407" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" opacity="0.8500000238418579" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></Label>
+            <Button fx:id="buttonSimulazione" alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="73.0" mnemonicParsing="false" onAction="#actionSimulazione" prefHeight="65.0" prefWidth="142.0" style="-fx-text-fill: green;" text="Simulazione" />
+            <Button fx:id="buttonCovidGame" layoutX="107.0" layoutY="155.0" mnemonicParsing="false" onAction="#actionCovidGame" prefHeight="65.0" prefWidth="142.0" style="-fx-text-fill: red;" text="CovidGame" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

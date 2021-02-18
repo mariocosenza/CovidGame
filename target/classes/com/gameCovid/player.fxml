@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.effect.ColorAdjust?>
 <AnchorPane prefHeight="377.0" prefWidth="672.0" stylesheets="@material-fx-v0_3.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameCovid.SecondaryController">
-   <children>
-      <ProgressBar fx:id="barNervoso" layoutX="156.0" layoutY="63.0" prefWidth="200.0" progress="0.0" visible="false" />
-      <ProgressBar fx:id="barCircolatorio" layoutX="156.0" layoutY="101.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <ProgressBar fx:id="barNervoso" layoutX="156.0" layoutY="63.0" prefWidth="200.0" progress="0.0" visible="false">
+         <effect>
+            <ColorAdjust fx:id="effectBarNervoso" hue="0.90" />
+         </effect>
+      </ProgressBar>
+      <ProgressBar fx:id="barCircolatorio" layoutX="156.0" layoutY="101.0" prefWidth="200.0" progress="0.0" visible="false">
+         <effect>
+            <ColorAdjust fx:id="effectBarCircolatorio" hue="0.30" />
+         </effect>
+      </ProgressBar>
       <ProgressBar fx:id="barRespiratorio" layoutX="156.0" layoutY="141.0" prefWidth="200.0" progress="0.0" visible="false">
          <effect>
-            <ColorAdjust  fx:id="effectBarRespiratorio" hue="1"/>
+            <ColorAdjust fx:id="effectBarRespiratorio" hue="-15" />
          </effect>
       </ProgressBar>
-      <ProgressBar fx:id="barScheletrico" layoutX="156.0" layoutY="181.0" prefWidth="200.0" progress="0.0" visible="false" />
-      <ProgressBar fx:id="barImmunitario" layoutX="156.0" layoutY="220.0" prefWidth="200.0" progress="0.0" visible="false" >
+      <ProgressBar fx:id="barScheletrico" layoutX="156.0" layoutY="181.0" prefWidth="200.0" progress="0.0" visible="false">
          <effect>
-            <ColorAdjust  fx:id="effectBarImmunitario" hue="0.80"/>
+            <ColorAdjust fx:id="effectBarScheletrico" hue="0.80" />
          </effect>
       </ProgressBar>
-      <ProgressBar fx:id="barAverageLife" layoutX="162.0" layoutY="331.0" prefHeight="21.0" prefWidth="459.0" progress="0.0" visible="false" >
+   <ProgressBar fx:id="barImmunitario" layoutX="156.0" layoutY="220.0" prefWidth="200.0" progress="0.0" visible="false">
          <effect>
-            <ColorAdjust  fx:id="effectBarAverage" hue="-0.50"/>
+            <ColorAdjust fx:id="effectBarImmunitario" hue="240" />
          </effect>
       </ProgressBar>
+      <ProgressBar fx:id="barAverageLife" layoutX="162.0" layoutY="331.0" prefHeight="21.0" prefWidth="459.0" progress="0.0" visible="false">
+         <effect>
+            <ColorAdjust fx:id="effectBarAverage" hue="-0.50" />
+         </effect>
+      </ProgressBar>
+
       <Label fx:id="labelNervoso" alignment="CENTER" layoutX="21.0" layoutY="65.0" prefHeight="20.0" prefWidth="115.0" style="-fx-text-fill: white;" text="Sistema Nervoso" visible="false" />
       <Label fx:id="labelCircolatorio" alignment="CENTER" layoutX="15.0" layoutY="102.0" prefHeight="20.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Sistema Circolatorio" visible="false" />
       <Label fx:id="labelRespiratorio" alignment="CENTER" layoutX="8.0" layoutY="142.0" prefHeight="20.0" prefWidth="139.0" style="-fx-text-fill: white;" text="Sistema Respiratorio" visible="false" />
@@ -35,28 +47,37 @@
       <Button fx:id="buttonImmunostimolanti" disable="true" layoutX="383.0" layoutY="202.0" mnemonicParsing="false" onAction="#actionImmunostimolanti" prefHeight="40.0" prefWidth="139.0" style="-fx-text-fill: #ffbb00;" text="Immunostimolanti" textAlignment="CENTER" visible="false">
          <font>
             <Font size="10.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Button fx:id="buttonCorticosteroidi" disable="true" layoutX="525.0" layoutY="142.0" mnemonicParsing="false" onAction="#actionCorticosteroidi" style="-fx-text-fill: #ffbb00;" text="Corticosteroidi" visible="false" />
       <Button fx:id="buttonVaccino" disable="true" layoutX="540.0" layoutY="203.0" mnemonicParsing="false" onAction="#actionVaccino" prefHeight="40.0" prefWidth="87.0" style="-fx-text-fill: green;" text="Vaccino" visible="false" />
       <Button fx:id="buttonOssigeno" disable="true" layoutX="409.0" layoutY="142.0" mnemonicParsing="false" onAction="#actionOssigeno" prefHeight="40.0" prefWidth="87.0" text="Ossigeno" visible="false" />
       <Button fx:id="buttonTAC" disable="true" layoutX="540.0" layoutY="81.0" mnemonicParsing="false" onAction="#actionTAC" prefHeight="40.0" prefWidth="87.0" text="TAC" visible="false" />
-      <Label fx:id="labelRisorse" layoutX="458.0" layoutY="42.0" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: white;" text="Punti risorse:" visible="false" />
-      <Label fx:id="labelLifeState" layoutX="449.0" layoutY="278.0" style="-fx-text-fill: white;" text="Puoi ancora vincere!" visible="false">
+      <Label fx:id="labelRisorse" layoutX="460.0" layoutY="42.0" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: #00f4ff;" text="Punti risorse:" textFill="#00f6ff" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
+      <Label fx:id="labelLifeState" layoutX="449.0" layoutY="278.0" style="-fx-text-fill: #00ff11;" text="Puoi ancora vincere!" textAlignment="CENTER" textFill="#00ff11" visible="false">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font></Label>
-      <Label fx:id="labelName" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="32.0" prefHeight="20.0" prefWidth="100.0" style="-fx-text-fill: red;" text="Inserisci il nick" textAlignment="JUSTIFY">
+      <Label fx:id="labelName" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="27.0" prefHeight="30.0" prefWidth="200.0" style="-fx-text-fill: red;" text="Covid-19 The Game" textAlignment="JUSTIFY">
          <font>
-            <Font name="Vivaldi Italic" size="12.0" />
+            <Font name="Bodoni MT Bold" size="20.0" />
          </font></Label>
-      <Label fx:id="labelPoint" layoutX="561.0" layoutY="42.0" prefHeight="20.0" prefWidth="28.0" style="-fx-text-fill: white;" text="0" visible="false" />
-      <Button fx:id="buttonGameInserisci" layoutX="111.0" layoutY="258.0" mnemonicParsing="false" onAction="#actionInserisci" prefHeight="40.0" prefWidth="90.0" style="-fx-text-fill: red;" text="Inserisci" />
-      <TextField fx:id="fieldName" layoutX="71.0" layoutY="144.0" promptText="Inserisci il nome" />
-      <Label fx:id="labelGuide" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="342.0" layoutY="67.0" prefHeight="258.0" prefWidth="308.0" text="Label---------------------------------------------------------------------" wrapText="true" />
+      <Label fx:id="labelPoint" layoutX="560.0" layoutY="42.0" prefHeight="20.0" prefWidth="28.0" style="-fx-text-fill: #00f4ff;" text="0" textFill="#00f4ff" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
+      <Button fx:id="buttonGameInserisci" layoutX="111.0" layoutY="237.0" mnemonicParsing="false" onAction="#actionInserisci" prefHeight="40.0" prefWidth="90.0" style="-fx-text-fill: red;" text="Inserisci" />
+      <TextField fx:id="fieldName" layoutX="73.0" layoutY="164.0" promptText="Inserisci il nome" style="-fx-text-fill: white;" />
+      <Label fx:id="labelGuide" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="74.0" prefHeight="279.0" prefWidth="367.0" style="-fx-text-fill: white;" text="In questa modalità potrai batterti per superare l'infezione da SARS-CoV-2. Potrai utilizzare dei farmaci o aiutarti con l'ossigeno nella respirazione. Ogni round la tua vita scenderà ma potrai sopravvire se riuscirari ad ottenere almeno 50 punti risorse e utilizzare l'upgrade vaccino. Buona partita!" textFill="WHITE" wrapText="true">
+      <font>
+         <Font name="Bodoni MT" size="23.0" />
+      </font></Label>
       <Label fx:id="labelVinto" alignment="CENTER" layoutX="131.0" layoutY="107.0" prefHeight="150.0" prefWidth="422.0" style="-fx-text-fill: green;" text="Hai vinto! Complimenti " textFill="#5aff3d" visible="false">
          <font>
             <Font name="Arial" size="35.0" />
          </font>
       </Label>
-   </children>
-</AnchorPane>
+   </AnchorPane>

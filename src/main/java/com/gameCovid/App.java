@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         mStage=stage;
         scene = new Scene(loadFXML("modeSelector"));
+        stage.setTitle("CovidGame! - ModeSelector");
         stage.setScene(scene);
         stage.sizeToScene();
         stage.show();

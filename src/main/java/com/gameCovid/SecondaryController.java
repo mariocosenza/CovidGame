@@ -1,9 +1,5 @@
 package com.gameCovid;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,8 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.ColorAdjust;
-import javafx.scene.input.MouseEvent;
-
 
 
 public class SecondaryController {
@@ -79,9 +73,7 @@ public class SecondaryController {
     private double averageLife = 100;
     private byte point = 0;
 
-    public void controlloBar () {
-        
-    }
+
     
     public double average(){
         averageLife = (sistemaNervoso + sistemaRespiratorio + sistemaScheletrico + sistemaImmunitario + sistemaCircolatorio) / 5;
@@ -90,8 +82,6 @@ public class SecondaryController {
 
     public void numRandom (int maxNervoso, int maxScheletrico, int maxImmunitario, int maxRespiratorio, int maxCircolatorio) {
        switch ((int)(Math.random() * 5)){
-           case 0:
-               break;
            case 1:
                    if ((int) (Math.random() * 4) == 0){
                        sistemaNervoso -= Math.random() * maxNervoso;
@@ -182,6 +172,7 @@ public class SecondaryController {
                    sistemaImmunitario  -= Math.random() * maxImmunitario;
                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
                break;
+           case 0:
            default:
                break;
 
@@ -191,11 +182,6 @@ public class SecondaryController {
 
     public void randomSistemi(){  //da modificare i valori
         if ( average () > 8 ) {
-           /* System.out.println(sistemaCircolatorio);
-            System.out.println(sistemaNervoso);
-            System.out.println(sistemaCircolatorio);
-            System.out.println(sistemaImmunitario);
-            System.out.println(sistemaScheletrico);*/
                 if (averageLife > 80 && averageLife <= 100) {
                   numRandom(15, 15, 20,20,20);
                   barCircolatorio.setProgress(sistemaCircolatorio/100);
@@ -238,6 +224,7 @@ public class SecondaryController {
                 }
         }
         else {
+            labelName.setVisible(false);
             labelPoint.setVisible(false);
             labelRisorse.setVisible(false);
             labelCircolatorio.setVisible(false);
@@ -281,7 +268,6 @@ public class SecondaryController {
             buttonOssigeno.setDisable(true);
             buttonVaccino.setDisable(true);
         }
-
         else if (point >= 3 && point < 5) { //analgesici
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(true);
@@ -343,40 +329,17 @@ public class SecondaryController {
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
         barAverageLife.setProgress(average()/100);
-
-
     }
 
     public void actionAnalgesici(ActionEvent actionEvent) {
        point -= 3;
        labelPoint.setText(String.valueOf((point)));
        stateButtonUpgrade();
-
-        if (sistemaNervoso <= 95 && sistemaScheletrico <= 95)  {
-            sistemaNervoso = 100;
-            sistemaScheletrico = 100;
-            barNervoso.setProgress(sistemaNervoso/100);
-            barScheletrico.setProgress(sistemaScheletrico/100);
-        }
-        else if ((sistemaNervoso <= 95) && (sistemaScheletrico > 95)) {
-             sistemaNervoso += 5;
-             sistemaScheletrico = 100;
-             barNervoso.setProgress(sistemaNervoso/100);
-             barScheletrico.setProgress(sistemaScheletrico/100);
-        }
-        else if ( (sistemaNervoso > 95) && (sistemaScheletrico <= 95)) {
-            sistemaNervoso = 100;
-            sistemaScheletrico += 95;
-            barNervoso.setProgress(sistemaNervoso/100);
-            barScheletrico.setProgress(sistemaScheletrico/100);
-        }
-        else{
-            sistemaScheletrico = 100;
-            sistemaNervoso = 100;
-            barNervoso.setProgress(1);
-            barScheletrico.setProgress(1);
-        }
-        barAverageLife.setProgress(average()/100);
+      sistemaNervoso = sumMaxLife(sistemaNervoso , 5);
+      sistemaScheletrico = sumMaxLife(sistemaScheletrico , 5);
+      barNervoso.setProgress(sistemaNervoso/100);
+      barScheletrico.setProgress(sistemaScheletrico/100);
+      barAverageLife.setProgress(average()/100);
     }
 
 
@@ -384,16 +347,8 @@ public class SecondaryController {
         point -= 8;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
-
-        if ( sistemaImmunitario <= 85 ) {
-           sistemaImmunitario += 15;
-           barImmunitario.setProgress(sistemaImmunitario/100);
-        }
-
-        else{
-            sistemaImmunitario = 100;
-            barImmunitario.setProgress(1);
-        }
+        sistemaImmunitario = sumMaxLife(sistemaImmunitario, 15);
+        barImmunitario.setProgress(sistemaImmunitario/100);
         barAverageLife.setProgress(average()/100);
     }
 
@@ -401,9 +356,9 @@ public class SecondaryController {
         point -= 5;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
-        sistemaCircolatorio = sumMax(sistemaCircolatorio, 7);
+        sistemaCircolatorio = sumMaxLife(sistemaCircolatorio, 7);
         barCircolatorio.setProgress(sistemaCircolatorio/100);
-        sistemaRespiratorio = sumMax(sistemaRespiratorio, 7);
+        sistemaRespiratorio = sumMaxLife(sistemaRespiratorio, 7);
         barRespiratorio.setProgress(sistemaRespiratorio/100);
         barAverageLife.setProgress(average()/100);
     }
@@ -412,37 +367,19 @@ public class SecondaryController {
         point -= 15;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
+        sistemaRespiratorio = sumMaxLife(sistemaRespiratorio, 15);
+        barRespiratorio.setProgress(sistemaRespiratorio/100);
+        sistemaCircolatorio = sumMaxLife(sistemaCircolatorio, 10);
+        barCircolatorio.setProgress(sistemaCircolatorio/100);
         barAverageLife.setProgress(average()/100);
-        if (sistemaRespiratorio <= 85) {
-            sistemaRespiratorio += 15;
-            barRespiratorio.setProgress(sistemaRespiratorio/100);
-        }
-        else {
-            sistemaRespiratorio = 100;
-            barRespiratorio.setProgress(1);
-        }
-        if (sistemaCircolatorio <= 90) {
-            sistemaCircolatorio += 10;
-            barCircolatorio.setProgress(sistemaCircolatorio/100);
-        }
-        else {
-            sistemaRespiratorio = 100;
-            barRespiratorio.setProgress(1);
-        }
     }
 
     public void actionTAC(ActionEvent actionEvent) {
         point -= 10;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
-        if ( sistemaRespiratorio <= 85) {
-            sistemaRespiratorio += 15;
-            barRespiratorio.setProgress(average()/100);
-        }
-        else{
-            sistemaRespiratorio = 100;
-            barRespiratorio.setProgress(1);
-        }
+        sistemaRespiratorio = sumMaxLife(sistemaRespiratorio, 15);
+        barRespiratorio.setProgress(sistemaRespiratorio/100);
         barAverageLife.setProgress(average()/100);
     }
 
@@ -517,7 +454,7 @@ public class SecondaryController {
         buttonVaccino.setDisable(true);
     }
 
-    public double sumMax(double sistema, double sum) {
+    public double sumMaxLife (double sistema, double sum) {
         if (sistema+sum >= 100) {
             sistema = 100;
         }
