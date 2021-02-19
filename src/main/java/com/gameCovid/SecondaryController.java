@@ -411,6 +411,7 @@ public class SecondaryController {
         fieldName.setVisible(false);
         labelVinto.setVisible(true);
         labelName.setVisible(false);
+        labelNick.setVisible(false);
     }
 
     public void actionInserisci(ActionEvent actionEvent) {
