@@ -37,7 +37,7 @@ public class Player {
 
     public void setStatoVita(boolean statoVita, byte i) {
         this.statoVita[i] = statoVita;
-    }
+    } //
 
 
 
