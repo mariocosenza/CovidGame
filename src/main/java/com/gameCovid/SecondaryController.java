@@ -464,7 +464,7 @@ public class SecondaryController {
         return sistema;
     }
 
-
+    //ciao
 
     /*@FXML
     private void switchToPrimary() throws IOException {

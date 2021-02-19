@@ -2,9 +2,8 @@ package com.gameCovid;
 
 import java.util.Random;
 
+public class Simulazione extends Player {
 
-
-    public class Simulazione extends Player {
         public void randomVita(byte i) {
             Random vivoMortoRandom = new Random();
             if (getGenere(totaleInseriti)==true){
