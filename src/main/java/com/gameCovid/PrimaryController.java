@@ -11,7 +11,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.paint.Color;
 
 
-public class PrimaryController extends Player {
+public class PrimaryController extends Player {//
 
     public TableView<String> TableView;
     public TableColumn tableNome;
