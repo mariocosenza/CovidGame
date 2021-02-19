@@ -20,7 +20,7 @@ public class ModeSelector {
     public Button buttonCovidGame;
     private Media media = new Media(new File("src/main/resources/com/gameCovid/horrorThemeCreepyVIVEK-ABHISHEK.mp3").toURI().toString());
     public MediaPlayer mediaPlayer = new MediaPlayer(media);
-
+//
 
 
     public void actionCovidGame(ActionEvent actionEvent) throws IOException

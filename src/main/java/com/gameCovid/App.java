@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * JavaFX App CovidGame
  */
 public class App extends Application {
 

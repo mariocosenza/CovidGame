@@ -351,7 +351,7 @@ public class SecondaryController {
         barImmunitario.setProgress(sistemaImmunitario/100);
         barAverageLife.setProgress(average()/100);
     }
-
+//
     public void actionCorticosteroidi(ActionEvent actionEvent) {
         point -= 5;
         labelPoint.setText(String.valueOf((point)));
