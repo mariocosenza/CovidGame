@@ -1,6 +1,5 @@
 package com.gameCovid;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -71,7 +70,8 @@ public class SecondaryController {
     private double sistemaImmunitario = 100;
     private double sistemaCircolatorio = 100;
     private double averageLife = 100;
-    private byte point = 0;
+    private int point = 0;
+    private int score=0;
 
 
     public double average() {
@@ -385,6 +385,12 @@ public class SecondaryController {
         labelVinto.setVisible(true);
         labelName.setVisible(false);
         labelNick.setVisible(false);
+        labelScore.setText("Hai totalizzato " + score);
+        labelScore.setVisible(true);
+        labelScore.setPrefWidth(250);
+        labelScore.setLayoutX(221);
+        labelScore.setLayoutY(215);
+        labelScore.setStyle("-fx-font-size: 22; -fx-text-fill: green");
     }
 
     public void actionInserisci(ActionEvent actionEvent) {
