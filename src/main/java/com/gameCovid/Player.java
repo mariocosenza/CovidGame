@@ -1,45 +1,40 @@
 package com.gameCovid;
 
 public class Player {
-    private String[] nome = new String[20];
-    private byte[] età = new byte[20];
-    private boolean [] genere= new boolean [20];
-    private boolean[]statoVita = new boolean[20];
-    public byte totaleInseriti = 0;
+    private String nome;
+    private String eta;
+    private boolean genere;
+    private boolean statoVita;
 
-    public String getNome (byte i){
-        return nome[i];
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome(String nome, byte i) {
-        this.nome[i] = nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public byte getEtà(byte i) {
-        return età[i];
+    public String getEta() {
+        return eta;
     }
 
-    public void setEtà(byte i, int età) {
-        this.età[i] = (byte) età;
+    public void setEta(String eta) {
+        this.eta = eta;
     }
 
-    public boolean getGenere(byte i) {
-        return genere[i];
+    public boolean isGenere() {
+        return genere;
     }
 
-    public void setGenere(byte i, boolean genere) {
-        this.genere[i] = genere;
+    public void setGenere(boolean genere) {
+        this.genere = genere;
     }
 
-    public boolean getStatoVita(byte i) {
-        return statoVita[i];
+    public boolean isStatoVita() {
+        return statoVita;
     }
 
-    public void setStatoVita(boolean statoVita, byte i) {
-        this.statoVita[i] = statoVita;
-    } //
-
-
-
-
+    public void setStatoVita(boolean statoVita) {
+        this.statoVita = statoVita;
+    }
 }

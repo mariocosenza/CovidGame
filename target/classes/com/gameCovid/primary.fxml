@@ -7,48 +7,60 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="335.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameCovid.PrimaryController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="334.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameCovid.PrimaryController">
    <effect>
       <Glow />
    </effect>
    <children>
-      <Button fx:id="buttonInserisci" layoutX="58.0" layoutY="246.0" mnemonicParsing="false" onAction="#clickInserisci" prefHeight="40.0" prefWidth="83.0" style="-fx-text-fill: red;" text="Inserisci" />
-      <Label layoutX="44.0" layoutY="86.0" style="-fx-text-fill: white;" text="Nome" />
-      <Label fx:id="labelEtà" layoutX="54.0" layoutY="134.0" style="-fx-text-fill: white;" text="Età" />
-      <Label layoutX="41.0" layoutY="178.0" style="-fx-text-fill: white;" text="Genere" />
-      <TextField fx:id="fieldNome" layoutX="99.0" layoutY="74.0" promptText="Nome" />
-      <Button fx:id="buttonSimula" layoutX="193.0" layoutY="246.0" mnemonicParsing="false" onAction="#clickSimula" prefHeight="40.0" prefWidth="84.0" style="-fx-text-fill: red;" text="Simula " />
-      <ComboBox id="comboBoxEtà" fx:id="comboBoxEtà" layoutX="101.0" layoutY="113.0" prefHeight="42.0" prefWidth="166.0" promptText="Scegli l'età">
-      <items>
-         <FXCollections fx:factory="observableArrayList">
-            <String fx:value=" 1-17" />
-            <String fx:value=" 18-39" />
-            <String fx:value=" 40-59" />
-            <String fx:value=" 60-79" />
-            <String fx:value=" 80+" />
-         </FXCollections>
-      </items>
-      </ComboBox>
-      <RadioButton fx:id="radioButtonUomo" layoutX="101.0" layoutY="168.0" mnemonicParsing="false" text="Uomo">
-         <toggleGroup>
-            <ToggleGroup fx:id="toggleGenere" />
-         </toggleGroup></RadioButton>
-      <RadioButton fx:id="radioButtonDonna" layoutX="185.0" layoutY="168.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="92.0" text="Donna" toggleGroup="$toggleGenere" />
-      <TableView fx:id="TableView" layoutX="331.0" layoutY="31.0" prefHeight="291.0" prefWidth="306.0">
-        <columns>
-          <TableColumn fx:id="tableNome" prefWidth="75.0" text="Nome" />
-          <TableColumn fx:id="tableGenere" prefWidth="75.0" text="Genere" />
-            <TableColumn fx:id="tableEtà" prefWidth="75.0" text="Età" />
-            <TableColumn fx:id="tableVita" prefWidth="75.0" text="Vita" />
-        </columns>
-      </TableView>
+      <StackPane fx:id="stackPane" prefHeight="340.0" prefWidth="504.0" visible="false">
+         <children>
+            <Label fx:id="labelSimula" alignment="CENTER" prefHeight="108.0" prefWidth="423.0">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="334.0" prefWidth="498.0">
+         <effect>
+            <Glow />
+         </effect>
+         <children>
+            <Label fx:id="labelName" layoutX="134.0" layoutY="86.0" style="-fx-text-fill: white;" text="Nome" />
+            <Label fx:id="labelEtà" layoutX="144.0" layoutY="134.0" style="-fx-text-fill: white;" text="Età" />
+            <Label fx:id="labelGenere" layoutX="131.0" layoutY="178.0" style="-fx-text-fill: white;" text="Genere" />
+            <TextField fx:id="fieldNome" layoutX="189.0" layoutY="74.0" promptText="Nome" />
+            <Button fx:id="buttonSimula" layoutX="230.0" layoutY="241.0" mnemonicParsing="false" onAction="#clickSimula" prefHeight="40.0" prefWidth="84.0" style="-fx-text-fill: red;" text="Simula " />
+            <ComboBox id="comboBoxEtà" fx:id="comboBoxEtà" layoutX="191.0" layoutY="113.0" prefHeight="42.0" prefWidth="166.0" promptText="Scegli l'età">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value=" 1-17" />
+                     <String fx:value=" 18-39" />
+                     <String fx:value=" 40-59" />
+                     <String fx:value=" 60-79" />
+                     <String fx:value=" 80+" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <RadioButton fx:id="radioButtonUomo" layoutX="191.0" layoutY="168.0" mnemonicParsing="false" text="Uomo">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleGenere" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonDonna" layoutX="275.0" layoutY="168.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="92.0" text="Donna" toggleGroup="$toggleGenere1" />
+         </children>
+         <stylesheets>
+            <URL value="@material-fx-v0_3.css" />
+            <URL value="@material-fx-v0_3.css" />
+         </stylesheets>
+      </Pane>
    </children>
    <stylesheets>
       <URL value="@material-fx-v0_3.css" />
