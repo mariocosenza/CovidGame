@@ -37,4 +37,6 @@ public class Player {
     public void setStatoVita(boolean statoVita) {
         this.statoVita = statoVita;
     }
+
+    //05/03/2021
 }
