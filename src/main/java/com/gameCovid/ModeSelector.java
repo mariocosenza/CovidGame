@@ -39,4 +39,6 @@ public class ModeSelector {
         App.mStage.sizeToScene();
         App.mStage.setTitle("CovidGame! - Simulazione");
     }
+
+    //05/03/2021
 }
