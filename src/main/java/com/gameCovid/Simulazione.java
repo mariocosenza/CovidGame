@@ -33,22 +33,30 @@ import java.util.Random;
                 boolean checkStato = true;
                 int età = getEtà(totaleInseriti);
 
-                if (età == 1) {
-                    checkStato = vivoMortoRandom.nextInt(100) + 1 > 2;
-                    setStatoVita(checkStato, i);
+                switch (getEta()) {
+                    case "1-17":
+                        checkStato = vivoMortoRandom.nextInt(100) + 1 > 2;
+                        setStatoVita(checkStato);
+
+                        break;
+                    case "18-39":
+                        checkStato = vivoMortoRandom.nextInt(100) + 1 > 6;
+                        setStatoVita(checkStato);
+                        break;
+                    case "40-59":
+                        checkStato = vivoMortoRandom.nextInt(100) + 1 > 15;
+                        setStatoVita(checkStato);
+                        break;
+                    case "60-79":
+                        checkStato = vivoMortoRandom.nextInt(100) + 1 > 20;
+                        setStatoVita(checkStato);
+                        break;
+                    default:
+                        checkStato = vivoMortoRandom.nextInt(100) + 1 > 25;
+                        setStatoVita(checkStato);
+                        break;
                 }
-                else if (età == 2) {
-                    checkStato = vivoMortoRandom.nextInt(100) + 1 > 6;
-                    setStatoVita(checkStato, i);
-                }
-                else if (età == 3) {
-                    checkStato = vivoMortoRandom.nextInt(100) + 1 > 15;
-                    setStatoVita(checkStato, i);
-                }
-                else {
-                    checkStato = vivoMortoRandom.nextInt(100) + 1 > 25;
-                    setStatoVita(checkStato, i);
-                }
+
             }
 
         }

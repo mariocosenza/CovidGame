@@ -88,4 +88,9 @@
          <Font name="Berlin Sans FB" size="22.0" />
       </font>
    </Label>
+   <Label fx:id="labelScore" alignment="CENTER" layoutX="35.0" layoutY="273.0" prefHeight="30.0" prefWidth="77.0" style="-fx-text-fill: #bc38bc;" text="Round: " textFill="#bc38bc" visible="false">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
    </AnchorPane>

@@ -11,15 +11,15 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.paint.Color;
 
 
-public class PrimaryController extends Player {//
+public class PrimaryController extends Player {
 
-    public TableView<String> TableView;
-    public TableColumn tableNome;
-    public TableColumn tableGenere;
-    public TableColumn tableVita;
-    public TableColumn tableEtà;
+
+    @FXML private Label labelSimula;
+    @FXML private Label labelName;
+    @FXML private Label labelGenere;
+    @FXML private Pane mainPane;
+    @FXML private StackPane stackPane;
     @FXML private Label labelEtà;
-    @FXML private Button buttonInserisci;
     @FXML private TextField fieldNome;
     @FXML private Button buttonSimula;
     @FXML private RadioButton radioButtonUomo;

@@ -65,165 +65,146 @@ public class SecondaryController {
     @FXML
     private Label labelVinto;
 
-    private double sistemaNervoso       = 100;
-    private double sistemaRespiratorio  = 100;
-    private double sistemaScheletrico   = 100;
-    private double sistemaImmunitario   = 100;
-    private double sistemaCircolatorio  = 100;
+    private double sistemaNervoso = 100;
+    private double sistemaRespiratorio = 100;
+    private double sistemaScheletrico = 100;
+    private double sistemaImmunitario = 100;
+    private double sistemaCircolatorio = 100;
     private double averageLife = 100;
     private byte point = 0;
 
 
-    
-    public double average(){
+    public double average() {
         averageLife = (sistemaNervoso + sistemaRespiratorio + sistemaScheletrico + sistemaImmunitario + sistemaCircolatorio) / 5;
         return averageLife;
     }
 
-    public void numRandom (int maxNervoso, int maxScheletrico, int maxImmunitario, int maxRespiratorio, int maxCircolatorio) {
-       switch ((int)(Math.random() * 5)){
-           case 1:
-                   if ((int) (Math.random() * 4) == 0){
-                       sistemaNervoso -= Math.random() * maxNervoso;
-                   }
-                   else if ((int) (Math.random()*4) == 1){
-                       sistemaScheletrico -= Math.random() * maxScheletrico;
-                   }
-                   else if ((int) (Math.random()*4) == 2){
-                       sistemaImmunitario -= Math.random() * maxImmunitario;
-                   }
-                   else if ((int) (Math.random()*4) == 3){
-                       sistemaRespiratorio -= Math.random() * maxRespiratorio;
-                   }
-                   else  {
-                       sistemaCircolatorio -= Math.random() * maxCircolatorio;
-                   }
-                   break;
-           case 2:
-                   if ((int) (Math.random()*4) == 0){
-                       sistemaNervoso     -= Math.random() * maxNervoso;
-                       sistemaScheletrico -= Math.random() * maxScheletrico;
-                   }
-                   else if ((int) (Math.random()*4) == 1){
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                       sistemaRespiratorio -= Math.random() * maxRespiratorio;
-                   }
-                   else if ((int) (Math.random()*4) == 2){
-                       sistemaCircolatorio -= Math.random() * maxCircolatorio;
-                       sistemaRespiratorio -= Math.random() * maxRespiratorio;
-                   }
-                   else if ((int) (Math.random()*4) == 3){
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                       sistemaScheletrico  -= Math.random() * maxScheletrico;
-                   }
-                   else  {
-                       sistemaNervoso      -= Math.random() * maxNervoso;
-                       sistemaCircolatorio -= Math.random() * maxCircolatorio;
-                   }
-               break;
+    public void numRandom(int maxNervoso, int maxScheletrico, int maxImmunitario, int maxRespiratorio, int maxCircolatorio) {
+        switch ((int) (Math.random() * 5)) {
+            case 1:
+                if ((int) (Math.random() * 4) == 0) {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                } else if ((int) (Math.random() * 4) == 1) {
+                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                } else if ((int) (Math.random() * 4) == 2) {
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                } else if ((int) (Math.random() * 4) == 3) {
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                } else {
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                }
+                break;
+            case 2:
+                if ((int) (Math.random() * 4) == 0) {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                } else if ((int) (Math.random() * 4) == 1) {
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                } else if ((int) (Math.random() * 4) == 2) {
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                } else if ((int) (Math.random() * 4) == 3) {
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                } else {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                }
+                break;
 
-           case 3:
-                   if ((int) (Math.random()*4) == 0){
-                       sistemaNervoso      -= Math.random() * maxNervoso;
-                       sistemaScheletrico  -= Math.random() * maxScheletrico;
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                   }
-                   else if ((int) (Math.random()*4) == 1){
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                       sistemaRespiratorio -= Math.random() * maxRespiratorio;
-                       sistemaCircolatorio -= Math.random() * maxCircolatorio;
-                   }
-                   else if ((int) (Math.random()*4) == 2){
-                       sistemaScheletrico  -= Math.random() * maxScheletrico;
-                       sistemaRespiratorio -= Math.random() * maxRespiratorio;
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                   }
-                   else if ((int) (Math.random()*4) == 3){
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                       sistemaScheletrico  -= Math.random() * maxScheletrico;
-                       sistemaNervoso      -= Math.random() * maxNervoso;
-                   }
-                   else  {
-                       sistemaNervoso      -= Math.random() *  maxNervoso;
-                       sistemaCircolatorio -= Math.random() *  maxCircolatorio;
-                       sistemaScheletrico  -= Math.random() *  maxScheletrico;
-                   }
-               break;
+            case 3:
+                if ((int) (Math.random() * 4) == 0) {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                } else if ((int) (Math.random() * 4) == 1) {
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                } else if ((int) (Math.random() * 4) == 2) {
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                } else if ((int) (Math.random() * 4) == 3) {
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                } else {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                }
+                break;
 
-           case 4:
-                   if ((int) (Math.random()*1) == 0){
-                       sistemaNervoso      -= Math.random() * maxNervoso;
-                       sistemaScheletrico  -= Math.random() * maxScheletrico;
-                       sistemaImmunitario  -= Math.random() * maxImmunitario;
-                       sistemaCircolatorio -= Math.random() * maxCircolatorio;
-                   }
-                   else  {
-                       sistemaNervoso      -= Math.random() * maxNervoso;
-                       sistemaCircolatorio -= Math.random() * maxCircolatorio;
-                       sistemaScheletrico  -= Math.random() * maxScheletrico;
-                       sistemaRespiratorio -= Math.random() * maxRespiratorio;
-                   }
-                   break;
-    
-               case 5:
-                   sistemaNervoso      -= Math.random() * maxNervoso;
-                   sistemaCircolatorio -= Math.random() *  maxCircolatorio;
-                   sistemaScheletrico  -= Math.random() *  maxScheletrico;
-                   sistemaImmunitario  -= Math.random() * maxImmunitario;
-                   sistemaRespiratorio -= Math.random() * maxRespiratorio;
-               break;
-           case 0:
-           default:
-               break;
+            case 4:
+                if ((int) (Math.random() * 1) == 0) {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                    sistemaImmunitario -= Math.random() * maxImmunitario;
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                } else {
+                    sistemaNervoso -= Math.random() * maxNervoso;
+                    sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                    sistemaScheletrico -= Math.random() * maxScheletrico;
+                    sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                }
+                break;
 
-       }
+            case 5:
+                sistemaNervoso -= Math.random() * maxNervoso;
+                sistemaCircolatorio -= Math.random() * maxCircolatorio;
+                sistemaScheletrico -= Math.random() * maxScheletrico;
+                sistemaImmunitario -= Math.random() * maxImmunitario;
+                sistemaRespiratorio -= Math.random() * maxRespiratorio;
+                break;
+            case 0:
+            default:
+                break;
+
+        }
 
     }
 
-    public void randomSistemi(){  //da modificare i valori
-        if ( average () > 8 ) {
-                if (averageLife > 80 && averageLife <= 100) {
-                  numRandom(15, 15, 20,20,20);
-                  barCircolatorio.setProgress(sistemaCircolatorio/100);
-                  barScheletrico.setProgress(sistemaScheletrico/100);
-                  barRespiratorio.setProgress(sistemaRespiratorio/100);
-                  barNervoso.setProgress(sistemaNervoso/100);
-                  barImmunitario.setProgress(sistemaImmunitario/100);
-                }
-                else if (averageLife > 50 && averageLife <= 80) {
-                    numRandom(15, 20, 20,25,20);
-                    barCircolatorio.setProgress(sistemaCircolatorio/100);
-                    barScheletrico.setProgress(sistemaScheletrico/100);
-                    barRespiratorio.setProgress(sistemaRespiratorio/100);
-                    barNervoso.setProgress(sistemaNervoso/100);
-                    barImmunitario.setProgress(sistemaImmunitario/100);
-                }
-                else if (averageLife > 30 && averageLife <= 50) {
-                    numRandom(10, 15, 10,10,10);
-                    barCircolatorio.setProgress(sistemaCircolatorio/100);
-                    barScheletrico.setProgress(sistemaScheletrico/100);
-                    barRespiratorio.setProgress(sistemaRespiratorio/100);
-                    barNervoso.setProgress(sistemaNervoso/100);
-                    barImmunitario.setProgress(sistemaImmunitario/100);
-                }
-                else if (averageLife > 10 && averageLife <= 30) {
-                    numRandom(5, 10, 15,15,10);
-                    barCircolatorio.setProgress(sistemaCircolatorio/100);
-                    barScheletrico.setProgress(sistemaScheletrico/100);
-                    barRespiratorio.setProgress(sistemaRespiratorio/100);
-                    barNervoso.setProgress(sistemaNervoso/100);
-                    barImmunitario.setProgress(sistemaImmunitario/100);
-                }
-                else  {
-                    numRandom(5, 10, 10,15,15);
-                    barCircolatorio.setProgress(sistemaCircolatorio/100);
-                    barScheletrico.setProgress(sistemaScheletrico/100);
-                    barRespiratorio.setProgress(sistemaRespiratorio/100);
-                    barNervoso.setProgress(sistemaNervoso/100);
-                    barImmunitario.setProgress(sistemaImmunitario/100);
-                }
-        }
-        else {
+    public void randomSistemi() {  //da modificare i valori
+        if (average() > 8) {
+            if (averageLife > 80 && averageLife <= 100) {
+                numRandom(10, 15, 20, 30, 20);
+                barCircolatorio.setProgress(sistemaCircolatorio / 100);
+                barScheletrico.setProgress(sistemaScheletrico / 100);
+                barRespiratorio.setProgress(sistemaRespiratorio / 100);
+                barNervoso.setProgress(sistemaNervoso / 100);
+                barImmunitario.setProgress(sistemaImmunitario / 100);
+            } else if (averageLife > 50 && averageLife <= 80) {
+                numRandom(10, 20, 20, 25, 20);
+                barCircolatorio.setProgress(sistemaCircolatorio / 100);
+                barScheletrico.setProgress(sistemaScheletrico / 100);
+                barRespiratorio.setProgress(sistemaRespiratorio / 100);
+                barNervoso.setProgress(sistemaNervoso / 100);
+                barImmunitario.setProgress(sistemaImmunitario / 100);
+            } else if (averageLife > 30 && averageLife <= 50) {
+                numRandom(8, 15, 10, 10, 10);
+                barCircolatorio.setProgress(sistemaCircolatorio / 100);
+                barScheletrico.setProgress(sistemaScheletrico / 100);
+                barRespiratorio.setProgress(sistemaRespiratorio / 100);
+                barNervoso.setProgress(sistemaNervoso / 100);
+                barImmunitario.setProgress(sistemaImmunitario / 100);
+            } else if (averageLife > 10 && averageLife <= 30) {
+                numRandom(5, 10, 15, 15, 10);
+                barCircolatorio.setProgress(sistemaCircolatorio / 100);
+                barScheletrico.setProgress(sistemaScheletrico / 100);
+                barRespiratorio.setProgress(sistemaRespiratorio / 100);
+                barNervoso.setProgress(sistemaNervoso / 100);
+                barImmunitario.setProgress(sistemaImmunitario / 100);
+            } else {
+                numRandom(5, 10, 10, 15, 15);
+                barCircolatorio.setProgress(sistemaCircolatorio / 100);
+                barScheletrico.setProgress(sistemaScheletrico / 100);
+                barRespiratorio.setProgress(sistemaRespiratorio / 100);
+                barNervoso.setProgress(sistemaNervoso / 100);
+                barImmunitario.setProgress(sistemaImmunitario / 100);
+            }
+        } else {
             labelName.setVisible(false);
             labelPoint.setVisible(false);
             labelRisorse.setVisible(false);
@@ -251,60 +232,50 @@ public class SecondaryController {
             labelGuide.setVisible(false);
             fieldName.setVisible(false);
             labelVinto.setText("Hai perso! Riprova");
-            labelVinto.setStyle( "-fx-text-fill: red");
             labelVinto.setVisible(true);
 
         }
 
     }
 
-    public void stateButtonUpgrade (){
+    public void stateButtonUpgrade() {
 
-        if  (point < 3){ //niente
+        if (point < 3) { //niente
             buttonAnalgesici.setDisable(true);
             buttonCorticosteroidi.setDisable(true);
             buttonImmunostimolanti.setDisable(true);
             buttonTAC.setDisable(true);
             buttonOssigeno.setDisable(true);
             buttonVaccino.setDisable(true);
-        }
-        else if (point >= 3 && point < 5) { //analgesici
+        } else if (point < 5) { //analgesici
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(true);
             buttonImmunostimolanti.setDisable(true);
             buttonTAC.setDisable(true);
             buttonOssigeno.setDisable(true);
             buttonVaccino.setDisable(true);
-        }
-
-        else if (point >=5 && point <8) { //analgesici e corticosteroidi
+        } else if (point < 8) { //analgesici e corticosteroidi
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(false);
             buttonImmunostimolanti.setDisable(true);
             buttonTAC.setDisable(true);
             buttonOssigeno.setDisable(true);
             buttonVaccino.setDisable(true);
-        }
-
-        else if (point >=8 && point <10){ //analgesici, corticosteroidi e farmaci Immunostimolanti
+        } else if (point < 10) { //analgesici, corticosteroidi e farmaci Immunostimolanti
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(false);
             buttonImmunostimolanti.setDisable(false);
             buttonTAC.setDisable(true);
             buttonOssigeno.setDisable(true);
             buttonVaccino.setDisable(true);
-        }
-
-        else if (point >=10 && point <15){ //analgesici, corticosteroidi, farmaci Immunostimolanti e  TAC
+        } else if (point < 15) { //analgesici, corticosteroidi, farmaci Immunostimolanti e  TAC
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(false);
             buttonImmunostimolanti.setDisable(false);
             buttonTAC.setDisable(false);
             buttonOssigeno.setDisable(true);
             buttonVaccino.setDisable(true);
-        }
-
-        else if (point >=15 && point <50){ //analgesici, corticosteroidi, farmaci Immunostimolanti, TAC, ossigeno
+        } else if (point < 50) { //analgesici, corticosteroidi, farmaci Immunostimolanti, TAC, ossigeno
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(false);
             buttonImmunostimolanti.setDisable(false);
@@ -312,8 +283,7 @@ public class SecondaryController {
             buttonOssigeno.setDisable(false);
             buttonVaccino.setDisable(true);
 
-        }
-        else { //tutto
+        } else { //tutto
             buttonAnalgesici.setDisable(false);
             buttonCorticosteroidi.setDisable(false);
             buttonImmunostimolanti.setDisable(false);
@@ -323,67 +293,70 @@ public class SecondaryController {
         }
     }
 
-    public void actionNextRound(ActionEvent actionEvent) {
+    public void actionNextRound() {
+        labelScore.setVisible(true);
+        labelScore.setText("Round: " + (++score) );
         randomSistemi();
-        point += Math.random()*6;
+        point += (int) (Math.random() * 5);
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
-        barAverageLife.setProgress(average()/100);
+        barAverageLife.setProgress(average() / 100);
     }
 
-    public void actionAnalgesici(ActionEvent actionEvent) {
-       point -= 3;
-       labelPoint.setText(String.valueOf((point)));
-       stateButtonUpgrade();
-      sistemaNervoso = sumMaxLife(sistemaNervoso , 5);
-      sistemaScheletrico = sumMaxLife(sistemaScheletrico , 5);
-      barNervoso.setProgress(sistemaNervoso/100);
-      barScheletrico.setProgress(sistemaScheletrico/100);
-      barAverageLife.setProgress(average()/100);
+    public void actionAnalgesici() {
+        point -= 3;
+        labelPoint.setText(String.valueOf((point)));
+        stateButtonUpgrade();
+        sistemaNervoso = sumMaxLife(sistemaNervoso, 5);
+        sistemaScheletrico = sumMaxLife(sistemaScheletrico, 5);
+        barNervoso.setProgress(sistemaNervoso / 100);
+        barScheletrico.setProgress(sistemaScheletrico / 100);
+        barAverageLife.setProgress(average() / 100);
     }
 
 
-    public void actionImmunostimolanti(ActionEvent action) {
+    public void actionImmunostimolanti() {
         point -= 8;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
         sistemaImmunitario = sumMaxLife(sistemaImmunitario, 15);
-        barImmunitario.setProgress(sistemaImmunitario/100);
-        barAverageLife.setProgress(average()/100);
+        barImmunitario.setProgress(sistemaImmunitario / 100);
+        barAverageLife.setProgress(average() / 100);
     }
-//
-    public void actionCorticosteroidi(ActionEvent actionEvent) {
+
+    //
+    public void actionCorticosteroidi() {
         point -= 5;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
         sistemaCircolatorio = sumMaxLife(sistemaCircolatorio, 7);
-        barCircolatorio.setProgress(sistemaCircolatorio/100);
+        barCircolatorio.setProgress(sistemaCircolatorio / 100);
         sistemaRespiratorio = sumMaxLife(sistemaRespiratorio, 7);
-        barRespiratorio.setProgress(sistemaRespiratorio/100);
-        barAverageLife.setProgress(average()/100);
+        barRespiratorio.setProgress(sistemaRespiratorio / 100);
+        barAverageLife.setProgress(average() / 100);
     }
 
-    public void actionOssigeno(ActionEvent actionEvent) {
+    public void actionOssigeno() {
         point -= 15;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
         sistemaRespiratorio = sumMaxLife(sistemaRespiratorio, 15);
-        barRespiratorio.setProgress(sistemaRespiratorio/100);
+        barRespiratorio.setProgress(sistemaRespiratorio / 100);
         sistemaCircolatorio = sumMaxLife(sistemaCircolatorio, 10);
-        barCircolatorio.setProgress(sistemaCircolatorio/100);
-        barAverageLife.setProgress(average()/100);
+        barCircolatorio.setProgress(sistemaCircolatorio / 100);
+        barAverageLife.setProgress(average() / 100);
     }
 
-    public void actionTAC(ActionEvent actionEvent) {
+    public void actionTAC() {
         point -= 10;
         labelPoint.setText(String.valueOf((point)));
         stateButtonUpgrade();
         sistemaRespiratorio = sumMaxLife(sistemaRespiratorio, 15);
-        barRespiratorio.setProgress(sistemaRespiratorio/100);
-        barAverageLife.setProgress(average()/100);
+        barRespiratorio.setProgress(sistemaRespiratorio / 100);
+        barAverageLife.setProgress(average() / 100);
     }
 
-    public void actionVaccino(ActionEvent actionEvent) {
+    public void actionVaccino() {
         labelPoint.setVisible(false);
         labelRisorse.setVisible(false);
         labelCircolatorio.setVisible(false);
@@ -455,20 +428,12 @@ public class SecondaryController {
         buttonVaccino.setDisable(true);
     }
 
-    public double sumMaxLife (double sistema, double sum) {
-        if (sistema+sum >= 100) {
+    public double sumMaxLife(double sistema, double sum) {
+        if (sistema + sum >= 100) {
             sistema = 100;
-        }
-        else {
+        } else {
             sistema += sum;
         }
         return sistema;
     }
-
-
-
-    /*@FXML
-    private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
-    }*/
 }
