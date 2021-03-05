@@ -10,7 +10,23 @@ import javafx.scene.effect.ColorAdjust;
 
 public class SecondaryController {
     @FXML
-    public Label labelGuide;
+    private Label labelScore;
+    @FXML
+    private Label labelGuide;
+    @FXML
+    public Label labelNick;
+    @FXML
+    private ColorAdjust effectBarNervoso;
+    @FXML
+    private ColorAdjust effectBarCircolatorio;
+    @FXML
+    private ColorAdjust effectBarRespiratorio;
+    @FXML
+    private ColorAdjust effectBarScheletrico;
+    @FXML
+    private ColorAdjust effectBarImmunitario;
+    @FXML
+    private ColorAdjust effectBarAverage;
     @FXML
     private ColorAdjust effectBar;
     @FXML
@@ -233,7 +249,13 @@ public class SecondaryController {
             fieldName.setVisible(false);
             labelVinto.setText("Hai perso! Riprova");
             labelVinto.setVisible(true);
-
+            labelNick.setVisible(false);
+            labelScore.setText("Hai totalizzato " + score);
+            labelScore.setVisible(true);
+            labelScore.setPrefWidth(250);
+            labelScore.setLayoutX(221);
+            labelScore.setLayoutY(215);
+            labelScore.setStyle("-fx-font-size: 22; -fx-text-fill: red");
         }
 
     }
@@ -393,8 +415,10 @@ public class SecondaryController {
         labelScore.setStyle("-fx-font-size: 22; -fx-text-fill: green");
     }
 
-    public void actionInserisci(ActionEvent actionEvent) {
-        labelName.setText(fieldName.getText().trim());
+    public void actionInserisci() {
+        labelName.setVisible(false);
+        labelNick.setText(fieldName.getText().trim());
+        labelNick.setVisible(true);
         labelPoint.setVisible(true);
         labelRisorse.setVisible(true);
         labelCircolatorio.setVisible(true);
