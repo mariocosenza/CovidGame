@@ -19,7 +19,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>18</version>
+            <version>18.0.1</version>
         </dependency>
 
         <dependency>
